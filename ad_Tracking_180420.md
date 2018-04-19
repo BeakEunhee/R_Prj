@@ -138,13 +138,18 @@ attributed_ <- function(tmp_down, tmp_not, tmp_all, tmp_col)
 ```
 
 ``` r
+par(mfrow = c(2, 2))
+
 search = 'channel'            # 'app'     :: 어플 별 클릭 수, 다운 수, 다운받지 않은 수 알고싶을때.
 tmp_down = down_app       # 다운DATA
 tmp_not = not_app         # 광고만 노출됐고 다운받지 않음 DATA 
 tmp_all = ad_df           # (down_app + not_app) DATA
 
 result_1 = attributed_(tmp_down, tmp_not, tmp_all, search)
-View(result_1[result_1$down > 0, ])
+# View(result_1[result_1$down > 0, ])
+
+barplot(result_1$down)
+barplot(result_1$notdown)
 
 rm(tmp_down)
 rm(tmp_not)
@@ -153,4 +158,4 @@ rm(tmp_all)
 # View(result_1)
 ```
 
-![](ad_Tracking_180420_files/figure-markdown_github/pressure-1.png)
+![](ad_Tracking_180420_files/figure-markdown_github/unnamed-chunk-5-1.png)
