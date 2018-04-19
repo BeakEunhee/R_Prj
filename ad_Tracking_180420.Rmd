@@ -1,0 +1,105 @@
+---
+title: "Untitled"
+output: github_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+```{r}
+rm(list = ls())
+path = "D:/08_R_Prj/02_data/ad_tracking/"
+# path = "D:/00_Beky/01_R_prj/data/adTracking/"
+ad_df = read.csv(paste0(path, "train_sample.csv"), na.strings=c("NA", ""), stringsAsFactors = F)
+head(ad_df, 20)
+```
+```{r}
+library(lubridate)
+
+cl_y_m_d = ymd(as.Date(ad_df$click_time))
+cl_h = as.POSIXlt(ad_df$click_time)$hour
+cl_y = year(cl_y_m_d)
+cl_q = quarter(cl_y_m_d)
+cl_m = month(cl_y_m_d)
+cl_d = day(cl_y_m_d)
+
+at_y_m_d = ymd(as.Date(ad_df$attributed_time))
+at_h = as.POSIXlt(ad_df$attributed_time)$hour
+at_y = year(at_y_m_d)
+at_q = quarter(at_y_m_d)
+at_m = month(at_y_m_d)
+at_d = day(at_y_m_d)
+
+ad_df = cbind(ad_df, cl_d, cl_h)
+```
+```{r}
+# ad_df
+down_app = ad_df[ad_df$is_attributed == 1, ]
+not_app = ad_df[ad_df$is_attributed == 0, ]
+```
+```{r}
+attributed_ <- function(tmp_down, tmp_not, tmp_all, tmp_col)
+{
+  ls_val = c()
+  ls_1 = c()
+  ls_2 = c()
+  ls_3 = c()
+  ls_4 = c()
+  ls_5 = c()
+  
+  tmp_ls   = unique(tmp_all[, tmp_col])
+  len = length(tmp_ls)
+  
+  for(i in 1 : len)
+  {
+    tmp_val   = tmp_ls[i]
+    tmp_1     = length(tmp_down[tmp_down[, tmp_col] == tmp_val , tmp_col])
+    tmp_2     = length(tmp_not[tmp_not[, tmp_col] == tmp_val , tmp_col])
+    tmp_3     = length(tmp_all[tmp_all[, tmp_col] == tmp_val , tmp_col])
+    tmp_4     = round(tmp_1 / tmp_3, 4)
+    # tmp_5     = round(tmp_2 / tmp_3, 4)
+    
+    ls_val[i] = tmp_val
+    ls_1[i]   = tmp_1
+    ls_2[i]   = tmp_2
+    ls_3[i]   = tmp_3
+    ls_4[i]   = tmp_4
+    # ls_5[i]   = tmp_5
+  }
+  
+  for(i in 1 : len)
+    ls_5[i]   = round(ls_1[i] / sum(ls_1), 4)
+
+  df_ = data.frame(ls_val, ls_1, ls_2, ls_3, ls_4, ls_5)
+
+  colnames(df_) = c(tmp_col, 'down', 'notdown', 'click', 'down/click', 'down_ratio')
+  
+  rm(ls_val)
+  rm(ls_1)
+  rm(ls_2)
+  rm(ls_3)
+  rm(ls_4)
+  rm(ls_5)
+  
+  return(df_)
+}
+```
+```{r}
+search = 'channel'            # 'app'     :: 어플 별 클릭 수, 다운 수, 다운받지 않은 수 알고싶을때.
+tmp_down = down_app       # 다운DATA
+tmp_not = not_app         # 광고만 노출됐고 다운받지 않음 DATA 
+tmp_all = ad_df           # (down_app + not_app) DATA
+
+result_1 = attributed_(tmp_down, tmp_not, tmp_all, search)
+View(result_1[result_1$down > 0, ])
+
+rm(tmp_down)
+rm(tmp_not)
+rm(tmp_all)
+
+# View(result_1)
+```
+
+```{r pressure, echo=FALSE}
+plot(pressure)
+```
