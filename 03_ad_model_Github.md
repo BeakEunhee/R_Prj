@@ -22,8 +22,6 @@ source("ad_function.r")
 <p style="font-weight:bold;">
 training Data 불러오기
 </p>
-=======================================
-=======================================
 
 ```{r}
 ad_df = readFile("ad_final.csv")
@@ -35,8 +33,6 @@ ad_df = readFile("ad_final.csv")
 <p style="font-weight:bold;">
 데이터셋 나누기 7 : 3
 </p>
-=======================================
-=======================================
 
 ```{r}
 selCol = c("ip", "app",  "device", "os", "channel", "cl_h",  "RT_WT")
@@ -53,8 +49,6 @@ dvalid     = ad_df[-tr_index,]
 <p style="font-weight:bold;">
 lightgbm 모델만들기
 </p>
-=======================================
-=======================================
 
 ```{r}
 dtrain_lgb = lgb.Dataset(data  = as.matrix(dtrain[, selCol])
