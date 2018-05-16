@@ -61,8 +61,6 @@ dim(ad_df)
 <p style="font-weight:bold;">
 cl\_h : clickTime Hour<br /> cl\_d : clickTime Day<br /> cl\_dh : cl\_h + cl\_d<br />
 </p>
-=======================================
-=======================================
 
 ``` r
 tmp_date = re_dateVal(ad_df$click_time)
