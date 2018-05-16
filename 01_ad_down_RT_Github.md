@@ -109,8 +109,6 @@ head(ad_df, 10)
 <p style="font-weight:bold;">
 down\_df : 광고를 보고 어플을 다운받음<br/> not\_df : 광고만 보고 다운받지 않음<br/> ad\_df : 전체 데이터<br/>
 </p>
-=======================================
-=======================================
 
 ``` r
 down_df = ad_df[ad_df$is_attributed == 1, ]
@@ -148,8 +146,6 @@ head(down_df, 10)
 <p style="font-weight:bold;font-size:25px;">
 02 :: down\_df와 not\_df내에서의 변수 별 빈도수 알아보기
 </p>
-=======================================
-=======================================
 
 ``` r
 #"ip","app","device","os","channel","cl_d","cl_h","cl_dh"  
