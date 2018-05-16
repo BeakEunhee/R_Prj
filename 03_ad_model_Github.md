@@ -146,12 +146,12 @@ rm(myxgb_model)
 =======================================
 
 <p style="font-weight:bold;">
-[1]     val-auc:0.932501
-Will train until val_auc hasn't improved in 50 rounds.
+[1]     val-auc:0.932501<br />
+Will train until val_auc hasn't improved in 50 rounds.<br /><br />
 
-[21]    val-auc:0.958273
-[41]    val-auc:0.959588
-[61]    val-auc:0.958954
-Stopping. Best iteration:
-[30]    val-auc:0.959616
+[21]    val-auc:0.958273<br />
+[41]    val-auc:0.959588<br />
+[61]    val-auc:0.958954<br />
+Stopping. Best iteration:<br />
+[30]    val-auc:0.959616<br />
 </p>
