@@ -20,7 +20,7 @@ source("ad_function.r")
 =======================================
 =======================================
 
-<p style="font-weight:bold;">
+<p style="font-weight:bold;font-size=25px;">
 >> training Data 불러오기
 </p>
 
@@ -31,7 +31,7 @@ ad_df = readFile("ad_final.csv")
 =======================================
 =======================================
 
-<p style="font-weight:bold;">
+<p style="font-weight:bold;font-size=25px;">
 >> 데이터셋 나누기 7 : 3
 </p>
 
@@ -87,7 +87,7 @@ invisible(gc())
 =======================================
 =======================================
 
-<p style="font-weight:bold;">
+<p style="font-weight:bold;font-size=25px;">
 >> lightgbm 결과값
 </p>
 
@@ -140,7 +140,7 @@ rm(myxgb_model)
 =======================================
 =======================================
 
-<p style="font-weight:bold;">
+<p style="font-weight:bold;font-size=25px;">
 >> XGboost 결과값
 </p>
 
