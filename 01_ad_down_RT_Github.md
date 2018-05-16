@@ -59,7 +59,9 @@ dim(ad_df)
 =======================================
 =======================================
 <p style="font-weight:bold;">
-cl\_h : clickTime Hour<br /> cl\_d : clickTime Day<br /> cl\_dh : cl\_h + cl\_d<br />
+>> cl\_h : clickTime Hour<br />
+>> cl\_d : clickTime Day<br />
+>> cl\_dh : cl\_h + cl\_d<br />
 </p>
 
 ``` r
@@ -104,10 +106,11 @@ head(ad_df, 10)
 =======================================
 
 <p style="font-weight:bold;font-size:25px;">
-01 :: App다운받은 데이터와 App다운받지 않은 데이터 나누기<br/>
+>> 01 :: App다운받은 데이터와 App다운받지 않은 데이터 나누기<br/>
 </p>
 <p style="font-weight:bold;">
-down\_df : 광고를 보고 어플을 다운받음<br/> not\_df : 광고만 보고 다운받지 않음<br/> ad\_df : 전체 데이터<br/>
+>> down\_df : 광고를 보고 어플을 다운받음<br/>
+>> not\_df : 광고만 보고 다운받지 않음<br/> ad\_df : 전체 데이터<br/>
 </p>
 
 ``` r
@@ -144,7 +147,7 @@ head(down_df, 10)
 =======================================
 
 <p style="font-weight:bold;font-size:25px;">
-02 :: down\_df와 not\_df내에서의 변수 별 빈도수 알아보기
+>> 02 :: down\_df와 not\_df내에서의 변수 별 빈도수 알아보기
 </p>
 
 ``` r
