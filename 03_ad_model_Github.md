@@ -43,13 +43,11 @@ tr_index   = createDataPartition(ad_df$is_attributed, p = 0.7, list = FALSE)
 dtrain     = ad_df[ tr_index,]
 dvalid     = ad_df[-tr_index,]
 ```
+(3) LightGBM 모델적용
+==========================
 
 =======================================
 =======================================
-
-<p style="font-weight:bold;">
->> lightgbm 모델만들기
-</p>
 
 ```{r}
 dtrain_lgb = lgb.Dataset(data  = as.matrix(dtrain[, selCol])
@@ -86,11 +84,12 @@ rm(params)
 invisible(gc())
 ```
 
-(3) LightGBM 결과 값
-==========================
+=======================================
+=======================================
 
-=======================================
-=======================================
+<p style="font-weight:bold;">
+>> lightgbm 결과값
+</p>
 
 <p style="font-weight:bold;">
 [LightGBM] [Info] Number of positive: 3083, number of negative: 1291245<br />
@@ -100,12 +99,11 @@ invisible(gc())
 [101]:  validation's auc:0.956123
 </p>
 
-=======================================
-=======================================
+(4) XGboost 모델적용
+==========================
 
-<p style="font-weight:bold;">
->> lightgbm 모델만들기
-</p>
+=======================================
+=======================================
 
 ```{r}
 model_train = xgb.DMatrix(data = as.matrix(dtrain[, selCol])
@@ -139,11 +137,12 @@ rm(params)
 rm(myxgb_model)
 ```
 
-(4) XGboost 결과 값
-==========================
+=======================================
+=======================================
 
-=======================================
-=======================================
+<p style="font-weight:bold;">
+>> XGboost 결과값
+</p>
 
 <p style="font-weight:bold;">
 [1]     val-auc:0.932501<br />
