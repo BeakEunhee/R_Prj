@@ -98,7 +98,7 @@ invisible(gc())
 [LightGBM] [Info] Number of data: 1294328, number of used features: 7<br />
 [1]:    validation's auc:0.92445<br />
 [101]:  validation's auc:0.956123
-</p>
+</p><br /><br />
 
 (4) XGboost 모델적용
 ========================================
