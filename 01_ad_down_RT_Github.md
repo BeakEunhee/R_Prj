@@ -53,15 +53,15 @@ dim(ad_df)
 
     ## [1] 1849039       8
 
-(2) cl\_h, cl\_d, cl\_dh 파생변수 만들기
+(2) cl_h, cl_d, cl_dh 파생변수 만들기
 ========================================
 
 =======================================
 =======================================
 <p style="font-weight:bold;">
->> cl\_h : clickTime Hour<br />
->> cl\_d : clickTime Day<br />
->> cl\_dh : cl\_h + cl\_d<br />
+>> cl_h : clickTime Hour<br />
+>> cl_d : clickTime Day<br />
+>> cl_dh : cl_h + cl_d<br />
 </p>
 
 ``` r
