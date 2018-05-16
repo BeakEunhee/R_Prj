@@ -97,10 +97,10 @@ invisible(gc())
 =======================================
 
 <p style="font-weight:bold;">
-[LightGBM] [Info] Number of positive: 3083, number of negative: 1291245
-[LightGBM] [Info] Total Bins 20165
-[LightGBM] [Info] Number of data: 1294328, number of used features: 7
-[1]:    validation's auc:0.92445
+[LightGBM] [Info] Number of positive: 3083, number of negative: 1291245<br />
+[LightGBM] [Info] Total Bins 20165<br />
+[LightGBM] [Info] Number of data: 1294328, number of used features: 7<br />
+[1]:    validation's auc:0.92445<br />
 [101]:  validation's auc:0.956123
 </p>
 =======================================
