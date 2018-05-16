@@ -13,6 +13,7 @@ library(lightgbm)
 source("ad_init.r")
 source("ad_function.r")
 ```
+
 (2) 모델 만들기
 ========================================
 
@@ -84,6 +85,7 @@ rm(dvalid_lgb)
 rm(params)
 invisible(gc())
 ```
+
 (3) 결과 값
 ==========================
 
